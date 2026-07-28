@@ -1,0 +1,17 @@
+$ docker --version
+docker version 25.0.2, build 29cf629
+
+$ docker run --rm ubuntu bash -lc "export DEBIAN_FRONTEND=noninteractive && apt-get update -qq && apt-get install -y nano -qq && mkdir -p /usr/src/app && cat > /usr/src/app/index.js <<'EOF'
+console.log('Hello World')
+EOF
+cat /usr/src/app/index.js"
+Selecting previously unselected package nano.
+(Reading database ... 7724 files and directories currently installed.)
+Preparing to unpack .../nano_8.7.1-1ubuntu0.1_amd64.deb ...
+Unpacking nano (8.7.1-1ubuntu0.1) ...
+Setting up nano (8.7.1-1ubuntu0.1) ...
+update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group editor) does not exist
+update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/pico.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group pico) does not exist
+console.log('Hello World')

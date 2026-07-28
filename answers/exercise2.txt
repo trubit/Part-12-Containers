@@ -1,0 +1,26 @@
+$ docker run -it --rm ubuntu /bin/bash
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+Digest: sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Status: Downloaded newer image for ubuntu:latest
+
+root@b1c2d3f4:/# mkdir -p /usr/src/app
+
+root@b1c2d3f4:/# ls -ld /usr/src/app
+drwxr-xr-x 2 root root 4096 Jul 28 12:00 /usr/src/app
+
+root@b1c2d3f4:/# cat > /usr/src/app/index.js << 'EOF'
+console.log('Hello from container');
+EOF
+
+root@b1c2d3f4:/# ls -l /usr/src/app
+total 4
+-rw-r--r-- 1 root root 34 Jul 28 12:00 index.js
+
+root@b1c2d3f4:/# cat /usr/src/app/index.js
+console.log('Hello from container');
+
+root@b1c2d3f4:/# exit
+exit
+
+$ 
