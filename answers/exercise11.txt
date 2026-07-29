@@ -1,0 +1,60 @@
+# Exercise 11 Shell Session
+
+## Command 1
+pwd
+
+## Output 1
+C:\Users\USER\OneDrive\Desktop\fs-containers
+
+## Command 2
+ls
+
+## Output 2
+.github
+answers
+todo-app
+todo-tests
+
+## Command 3
+ls todo-app/todo-backend
+
+## Output 3
+bin
+mongo
+node_modules
+package-lock.json
+package.json
+README.md
+docker-compose.dev.yml
+routes
+redis
+util
+
+## Command 4
+docker version
+
+## Output 4
+Client:
+ Cloud integration: v1.0.35+desktop.10
+ Version:           25.0.2
+ API version:       1.44
+ Go version:        go1.21.6
+ Git commit:        29cf629
+ Built:             Thu Feb  1 00:24:09 2024
+ OS/Arch:           windows/amd64
+ Context:           desktop-linux
+
+---
+
+## Command 5
+docker ps --format '{{.Names}}\t{{.Image}}\t{{.Status}}'
+
+## Output 5
+error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.24/containers/json": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+
+Command exited with code 1
+
+## Notes
+- Docker is installed on the client, but the daemon is not reachable from this shell session.
+- I could not enter the Redis container with `docker exec` because the Docker socket/daemon was unavailable.
+- No Redis CLI interaction was possible from this environment.
