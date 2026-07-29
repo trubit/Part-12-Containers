@@ -1,0 +1,37 @@
+
+cd c:\Users\USER\OneDrive\Desktop\fs-containers\todo-app\todo-backend
+$ docker context use desktop-linux
+desktop-linux
+Current context is now "desktop-linux"
+
+$ docker ps -a --filter name=exercise8-mongo --format '{{.Names}} {{.Image}} {{.Status}} {{.Ports}}'
+exercise8-mongo mongo:7 Up 30 minutes 0.0.0.0:27017->27017/tcp
+
+$ docker exec exercise8-mongo mongosh --username root --password example --authenticationDatabase admin --eval 'db.adminCommand({listDatabases:1}); db = db.getSiblingDB(\
+SyntaxError: Unexpected token, expected "," (1:157)
+System.Management.Automation.RemoteException
+> 1 | db.adminCommand({listDatabases:1}); db = db.getSiblingDB(the_database); db.getCollectionNames(); db.todos.find().toArray(); db.todos.insertOne({text:Increase
+    |                                                                                                                                                              ^
+
+$ npm install
+
+up to date, audited 125 packages in 19s
+
+29 packages are looking for funding
+  run `npm fund` for details
+
+7 vulnerabilities (1 low, 3 moderate, 3 high)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+$ Start-Job -Name todo-backend -ScriptBlock { Set-Location 'c:\Users\USER\OneDrive\Desktop\fs-containers\todo-app\todo-backend'; ='mongodb://root:example@localhost:27017/the_database?authSource=admin'; ='3001'; node .\bin\www } ; Start-Sleep -Seconds 10
+
+$ curl.exe -s http://localhost:3001/todos
+
+$ Stop-Job -Name todo-backend
+$ Remove-Job -Name todo-backend
+
+exercise8 done
